@@ -1,4 +1,4 @@
-# v-loop-lab
+# v-site-vitrine
 
 ## Project setup
 ```
