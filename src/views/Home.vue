@@ -86,6 +86,9 @@
     <section class="bg-light py-5" style="color: #333">
       <share-section />
     </section>
+    <footer class="bg-dark">
+      <footer-section />
+    </footer>
   </div>
 </template>
 
@@ -96,6 +99,7 @@ import CreateHeader from "@/views/CreateHeader";
 import CreateSection from "@/views/CreateSection";
 import ShareHeader from "@/views/ShareHeader";
 import ShareSection from "@/views/ShareSection";
+import Footer from "@/views/Footer";
 
 export default {
   components: {
@@ -105,6 +109,7 @@ export default {
     "create-section": CreateSection,
     "share-header": ShareHeader,
     "share-section": ShareSection,
+    "footer-section": Footer,
   },
   data() {
     return {
