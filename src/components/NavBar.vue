@@ -25,13 +25,18 @@ export default {
   },
   data() {
     return {
-      menuItems: ["Home", "Explore", "Create", "Share"]
+      menuItems: [
+        "home-section",
+        "explore-head",
+        "create-head",
+        "share-head"
+      ]
     };
   },
   methods: {
     handleSelectItem(item) {
       // eslint-disable-next-line no-console
-      // console.log(item)
+      //  alert(item)
 
       bus.$emit('selected', item)
     },

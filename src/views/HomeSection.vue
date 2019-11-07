@@ -49,7 +49,7 @@
                   </div>
                   <div class="form-group">
                     <input
-                      type="text"
+                      type="password"
                       class="form-control form-control-lg"
                       placeholder="Confirm Password"
                     />

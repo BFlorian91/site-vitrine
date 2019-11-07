@@ -52,23 +52,35 @@ export default {
   },
   data() {
     return {
-      refName: []
+      refName: [],
+      refSave: []
     };
+  },
+  computed: {
+    get: () => {
+      bus.$on("selected", selected => {
+        this.refName = selected;
+      }
+    }
   },
   mounted() {
     // eslint-disable-next-line no-console
-    console.log("#" + this.refName);
-    document
-      .querySelector("#" + this.refName)
-      .scrollIntoView({ behavior: "smooth" });
+    // console.log(this.refName);
+      // alert("#" + this.refName)
+      this.$path = "#" + this.refName
+      alert(this.$path)
+      // if (this.$path === "#")
+      //   this.refName = "home-section"
+      // alert(this.refName)
+      document
+        .querySelector("#" + this.refName)
+        .scrollIntoView({ behavior: "smooth" });
   },
-  created() {
-    // eslint-disable-next-line no-console
-    // console.log(bus)
+  beforeCreate() {
     bus.$on("selected", selected => {
       this.refName = selected;
     });
-  }
+  },
 };
 </script>
 
