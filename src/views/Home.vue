@@ -1,11 +1,5 @@
 <template>
   <div>
-    <div id="menu-section">
-      <span
-        
-      >
-      </span>
-    </div>
     <section id="home-section">
       <home-section />
     </section>
@@ -34,6 +28,8 @@
 </template>
 
 <script>
+import bus from "@/bus";
+
 import HomeSection from "@/views/HomeSection";
 import ExploreHead from "@/views/ExploreHead";
 import ExploreSection from "@/views/ExploreSection";
@@ -53,6 +49,25 @@ export default {
     "share-header": ShareHeader,
     "share-section": ShareSection,
     "footer-section": Footer
+  },
+  data() {
+    return {
+      refName: []
+    };
+  },
+  mounted() {
+    // eslint-disable-next-line no-console
+    console.log("#" + this.refName);
+    document
+      .querySelector("#" + this.refName)
+      .scrollIntoView({ behavior: "smooth" });
+  },
+  created() {
+    // eslint-disable-next-line no-console
+    // console.log(bus)
+    bus.$on("selected", selected => {
+      this.refName = selected;
+    });
   }
 };
 </script>

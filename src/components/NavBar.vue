@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item" v-for="(item, index) in menuItems" :key="index">
-            <a :href="'#' + item + '-head-section'" class="nav-link">{{ item }}</a>
+            <a href="" @click="handleSelectItem(item)" class="nav-link">{{ item }}</a>
           </li>
         </ul>
       </div>
@@ -17,11 +17,24 @@
 </template>
 
 <script>
+import bus from '@/bus'
+
 export default {
+  props: {
+    href: String
+  },
   data() {
     return {
       menuItems: ["Home", "Explore", "Create", "Share"]
     };
+  },
+  methods: {
+    handleSelectItem(item) {
+      // eslint-disable-next-line no-console
+      // console.log(item)
+
+      bus.$emit('selected', item)
+    },
   }
 };
 </script>

@@ -2,7 +2,7 @@
   <div class="container" id="explore-section">
     <div class="row">
       <div class="col-md-6">
-        <img src="@/img/explore-section1.jpg" alt class="img-fluid mb-3 rounded-circle" />
+        <img src="@/assets/img/explore-section1.jpg" alt class="img-fluid mb-3 rounded-circle" />
       </div>
       <div class="col-md-6">
         <h3>Explore & Connect</h3>

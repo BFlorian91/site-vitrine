@@ -3,16 +3,30 @@
     <div id="nav">
       <nav-bar />
     </div>
-    <router-view/>
+    <home />
+    <!-- <router-view/> -->
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar'
+import Home from '@/views/Home'
+
 export default {
   components: {
     'nav-bar': NavBar,
-  }
+    'home': Home,
+  },
+  data () {
+    return {
+      selectItemClicked: [],
+    }
+  },
+  methods: {
+    setSelected(selectItemClicked) {
+      this.selectItemClicked = selectItemClicked;
+    }
+  },
 }
 </script>
 
@@ -20,7 +34,6 @@ export default {
 body {
   background-color: #333;
 }
-
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

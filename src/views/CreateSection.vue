@@ -2,7 +2,7 @@
   <div class="container" id="create-section">
     <div class="row">
       <div class="col-md-6 order-2">
-        <img src="@/img/create-section1.jpg" alt class="img-fluid mb-3 rounded-circle" />
+        <img src="@/assets/img/create-section1.jpg" alt class="img-fluid mb-3 rounded-circle" />
       </div>
       <div class="col-md-6 order-1">
         <h3>Create Your Passion</h3>

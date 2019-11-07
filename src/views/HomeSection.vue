@@ -80,7 +80,7 @@ export default {
 
 <style>
 #home-section {
-  background: url(../img/home.jpg);
+  background: url(../assets/img/home.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
