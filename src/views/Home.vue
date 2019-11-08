@@ -10,7 +10,11 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item" v-for="(value, name, index) in items" :key="index">
-                <span @click="selectItem(value)" class="nav-link" style="cursor: pointer;">{{ name }}</span>
+                <span
+                  @click="selectItem(value)"
+                  class="nav-link"
+                  style="cursor: pointer;"
+                >{{ name }}</span>
               </li>
             </ul>
           </div>
@@ -47,8 +51,6 @@
 </template>
 
 <script>
-// import bus from "@/bus";
-
 import HomeSection from "@/views/HomeSection";
 import ExploreHead from "@/views/ExploreHeader";
 import ExploreSection from "@/views/ExploreSection";
@@ -76,16 +78,17 @@ export default {
         Explore: "explore-header",
         Create: "create-header",
         Share: "share-header"
-      }
+      },
+      modal: false
     };
   },
   methods: {
     selectItem(item) {
       // eslint-disable-next-line no-console
-      console.log("#" + item);
-      // if (item == "explore-head")
+      // console.log("#" + item);
       document.querySelector("#" + item).scrollIntoView({ behavior: "smooth" });
-    }
+    },
+
   }
 };
 </script>
@@ -93,5 +96,10 @@ export default {
 <style>
 #share-section {
   color: #333;
+}
+.navbar {
+  border-bottom: #008ed6 3px solid;
+  color: azure;
+  opacity: 0.8;
 }
 </style>
