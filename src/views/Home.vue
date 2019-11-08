@@ -1,37 +1,56 @@
 <template>
   <div>
-    <section id="home-section">
-      <home-section />
-    </section>
-    <section id="explore-head-section">
-      <explore-head />
-    </section>
-    <section id="explore-section" class="bg-light text-muted py-5">
-      <explore-section />
-    </section>
-    <section id="create-header" class="bg-primary">
-      <create-header />
-    </section>
-    <section id="create-section" class="py-5 bg-dark">
-      <create-section />
-    </section>
-    <section id="share-header" class="bg-primary">
-      <share-header />
-    </section>
-    <section id="share-section" class="bg-light py-5">
-      <share-section />
-    </section>
-    <footer id="footer-section" class="bg-dark">
-      <footer-section />
-    </footer>
+    <div>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container">
+          <a href class="navbar-brand">Share Your Passion</a>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item" v-for="(value, name, index) in items" :key="index">
+                <span @click="selectItem(value)" class="nav-link" style="cursor: pointer;">{{ name }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div>
+      <section id="home-section">
+        <home-section />
+      </section>
+      <section id="explore-header">
+        <explore-header />
+      </section>
+      <section id="explore-section" class="bg-light text-muted py-5">
+        <explore-section />
+      </section>
+      <section id="create-header" class="bg-primary">
+        <create-header />
+      </section>
+      <section id="create-section" class="py-5 bg-dark">
+        <create-section />
+      </section>
+      <section id="share-header" class="bg-primary">
+        <share-header />
+      </section>
+      <section id="share-section" class="bg-light py-5">
+        <share-section />
+      </section>
+      <footer id="footer-section" class="bg-dark">
+        <footer-section />
+      </footer>
+    </div>
   </div>
 </template>
 
 <script>
-import bus from "@/bus";
+// import bus from "@/bus";
 
 import HomeSection from "@/views/HomeSection";
-import ExploreHead from "@/views/ExploreHead";
+import ExploreHead from "@/views/ExploreHeader";
 import ExploreSection from "@/views/ExploreSection";
 import CreateHeader from "@/views/CreateHeader";
 import CreateSection from "@/views/CreateSection";
@@ -42,7 +61,7 @@ import Footer from "@/views/Footer";
 export default {
   components: {
     "home-section": HomeSection,
-    "explore-head": ExploreHead,
+    "explore-header": ExploreHead,
     "explore-section": ExploreSection,
     "create-header": CreateHeader,
     "create-section": CreateSection,
@@ -52,35 +71,22 @@ export default {
   },
   data() {
     return {
-      refName: [],
-      refSave: []
+      items: {
+        Home: "home-section",
+        Explore: "explore-header",
+        Create: "create-header",
+        Share: "share-header"
+      }
     };
   },
-  computed: {
-    get: () => {
-      bus.$on("selected", selected => {
-        this.refName = selected;
-      }
+  methods: {
+    selectItem(item) {
+      // eslint-disable-next-line no-console
+      console.log("#" + item);
+      // if (item == "explore-head")
+      document.querySelector("#" + item).scrollIntoView({ behavior: "smooth" });
     }
-  },
-  mounted() {
-    // eslint-disable-next-line no-console
-    // console.log(this.refName);
-      // alert("#" + this.refName)
-      this.$path = "#" + this.refName
-      alert(this.$path)
-      // if (this.$path === "#")
-      //   this.refName = "home-section"
-      // alert(this.refName)
-      document
-        .querySelector("#" + this.refName)
-        .scrollIntoView({ behavior: "smooth" });
-  },
-  beforeCreate() {
-    bus.$on("selected", selected => {
-      this.refName = selected;
-    });
-  },
+  }
 };
 </script>
 

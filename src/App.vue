@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <nav-bar />
+      <!-- <nav-bar /> -->
     </div>
     <home />
     <!-- <router-view/> -->
@@ -9,22 +9,16 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar'
+// import NavBar from '@/components/NavBar'
 import Home from '@/views/Home'
 
 export default {
   components: {
-    'nav-bar': NavBar,
+    // 'nav-bar': NavBar,
     'home': Home,
   },
   data () {
     return {
-      selectItemClicked: [],
-    }
-  },
-  methods: {
-    setSelected(selectItemClicked) {
-      this.selectItemClicked = selectItemClicked;
     }
   },
 }

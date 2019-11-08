@@ -20,9 +20,6 @@
 import bus from '@/bus'
 
 export default {
-  props: {
-    href: String
-  },
   data() {
     return {
       menuItems: [
@@ -35,9 +32,6 @@ export default {
   },
   methods: {
     handleSelectItem(item) {
-      // eslint-disable-next-line no-console
-      //  alert(item)
-
       bus.$emit('selected', item)
     },
   }
