@@ -1,5 +1,7 @@
 # v-site-vitrine
 
+![](https://github.com/BFlorian91/site-vitrine/blob/master/src/assets/img/screen.png)
+
 ## Project setup
 ```
 npm install
